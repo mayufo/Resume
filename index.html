@@ -83,34 +83,99 @@
 
   <div class="topBgWrap"></div>
   <div class="topBg"></div>
-  <!--<a class="download" download>DOWNLOAD RESUME</a>-->
+  <div class="downloadWrap">
+    <a class="download" download href="assets/download/resume.pdf">DOWNLOAD RESUME</a>
+    <p>悬浮在尘世中的一个小小程序员，码出每一个符号，书写一段段逻辑，只为写成更好的程序，带来更棒的产品。无论在任何公司，我都不忘初心，不违本心，不负真心！做一个有灵魂的前端工程师！</p>
+  </div>
 
-  <!--<section>-->
-    <!--<h2>我的技能</h2>-->
-    <!--<ol>-->
-      <!--<li>html5 & css3</li>-->
-      <!--<li>javascript</li>-->
-      <!--<li>JQuery</li>-->
-      <!--<li>vue</li>-->
-      <!--<li>react</li>-->
-      <!--<li>angular</li>-->
-    <!--</ol>-->
-  <!--</section>-->
+  <section class="skill">
+    <h2>Professional Skills</h2>
+    <ul class="clearfix">
+      <li>
+        <h3>HTML 5 & CSS 3</h3>
+        <div class="row">
+          <div class="progress" data-width="90%" style="width: 90%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>Javascript</h3>
+        <div class="row">
+          <div class="progress" data-width="75%" style="width: 75%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>JQuery</h3>
+        <div class="row">
+          <div class="progress" data-width="60%" style="width: 60%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>PhotoShop</h3>
+        <div class="row">
+          <div class="progress" data-width="50%" style="width: 50%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>Vue</h3>
+        <div class="row">
+          <div class="progress" data-width="60%" style="width: 60%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>Node</h3>
+        <div class="row">
+          <div class="progress" data-width="20%" style="width: 20%"></div>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-  <!--<section>-->
-    <!--<nav>-->
-      <!--<ol>-->
-        <!--<li>作品1</li>-->
-        <!--<li>作品1</li>-->
-        <!--<li>作品1</li>-->
-      <!--</ol>-->
-    <!--</nav>-->
-    <!--<div class="project">-->
-      <!--<div class="big"></div>-->
-      <!--<div class="small"></div>-->
-      <!--<div class="small"></div>-->
-
-    <!--</div>-->
-  <!--</section>-->
+  <section class="portfolio">
+    <h2>Portfolio</h2>
+    <nav>
+      <ul class="clearfix">
+        <li id="item1">All</li>
+        <li id="item2">UI组件</li>
+        <li id="item3">Demo</li>
+      </ul>
+      <div id="barItem" class="bar state-3">
+        <div class="barInner"></div>
+      </div>
+    </nav>
+    <div class="project">
+      <div class="projectItem big" style="top: 0; left: 0;">
+        <img src="assets/img/1.jpg" alt="">
+        <div class="projectInfo">
+          <h4>Vue demo</h4>
+          <div class="desc">desc it</div>
+        </div>
+      </div>
+      <div class="projectItem small" style="top: 0; right: 0">
+        <img src="assets/img/2.jpg" alt="">
+        <div class="projectInfo">
+          <h4>Node demo</h4>
+          <div class="desc">desc it</div>
+        </div>
+      </div>
+      <div class="projectItem small" style="bottom: 0; right: 0">
+        <img src="assets/img/3.jpg" alt="">
+        <div class="projectInfo">
+          <h4>React demo</h4>
+          <div class="desc">desc it</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    item1.onclick = function () {
+        barItem.className = "bar state-1"
+    }
+    item2.onclick = function () {
+        barItem.className = "bar state-2"
+    }
+    item3.onclick = function () {
+        barItem.className = "bar state-3"
+    }
+  </script>
 </body>
 </html>
