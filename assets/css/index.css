@@ -290,7 +290,6 @@ main .infoWrap footer li a:hover {
   box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
   animation: progress 2s forwards;
   animation-timing-function: linear;
-  animation-delay:2s;
 }
 
 @-webkit-keyframes progress {
