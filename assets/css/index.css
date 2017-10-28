@@ -68,8 +68,6 @@ section h2 {
   }
 }
 
-
-
 .topHeader h1 {
   float: left
 }
@@ -245,8 +243,6 @@ main .infoWrap footer li a:hover {
   display: inline-block;
   font-weight: bold;
   transition: all 0.3s;
-
-  /*transition： box-shadow 0.2s;*/
 }
 
 .downloadWrap a:hover {
@@ -374,7 +370,7 @@ main .infoWrap footer li a:hover {
 
 .portfolio .project .projectItem::before {
   content: '';
-  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.35) 100%);
   display: inline-block;
   position: absolute;
   width: 100%;
