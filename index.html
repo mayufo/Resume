@@ -4,178 +4,193 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>May的个人简历</title>
   <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/loading.css">
   <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_451047_ovb5hcvk3lgwg66r.css">
 </head>
 <body>
-  <!--头部导航-->
-  <div class="topHeader clearfix">
-    <h1>
-      <span>RS</span><span>card</span>
-    </h1>
-    <nav>
-      <ul>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">SKILLS</a></li>
-        <li><a href="#">EXPERIENCE</a></li>
-        <li><a href="#">PRICING</a></li>
-        <li><a href="#">BLOG</a></li>
-        <li><a href="#">CALENDAR</a></li>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">OTHER</a></li>
-      </ul>
-    </nav>
-
+  <!--loading-->
+  <div class="shadow">
+    <div class="loading"></div>
   </div>
-  <!--人物介绍-->
-  <main>
-    <div class="infoWrap clearfix">
-      <div class="infoShow clearfix">
-        <img src="./assets/img/man.jpg" class="photo" alt="我的图片">
-        <div class="info">
-          <span class="tip">HELLO</span>
-          <span class="triangle"></span>
-          <h2>MAY</h2>
-          <p>前端开发，二次元爱好者</p>
-          <hr>
+  <div class="main">
+    <!--头部导航-->
+    <div class="topHeader clearfix">
+      <div class="topHeaderInner">
+        <h1>
+          <span>RS</span><span>card</span>
+        </h1>
+        <nav>
+          <ul class="nav clearfix">
+            <li><a href="#about">about</a></li>
+            <li><a href="#skills">skills</a></li>
+            <li>
+              <a href="#portfolio">portfolio</a>
+              <ul class="childMenu">
+                <li><a>PORTFOLIO1</a></li>
+                <li><a>PORTFOLIO2</a></li>
+                <li><a>PORTFOLIO3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">experience</a>
+              <ul class="childMenu">
+                <li><a>EXPERIENCE1</a></li>
+                <li><a>EXPERIENCE2</a></li>
+                <li><a>EXPERIENCE3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">calendar</a></li>
+            <li><a href="#">contact</a></li>
+            <li><a href="#">other</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!--人物介绍-->
+    <main id="about">
+      <div class="infoWrap clearfix">
+        <div class="infoShow clearfix">
+          <img src="./assets/img/man.jpg" class="photo" alt="我的图片">
+          <div class="info">
+            <span class="tip">HELLO</span>
+            <span class="triangle"></span>
+            <h2>MAY</h2>
+            <p>前端开发，二次元爱好者</p>
+            <hr>
+            <ul>
+              <li>
+                <strong>AGE</strong>
+                <span>18</span>
+              </li>
+              <li>
+                <strong>ADDRESS</strong>
+                <span>陕西.西安</span>
+              </li>
+              <li>
+                <strong>E-MAIL</strong>
+                <span>mayufo@aliyun.com</span>
+              </li>
+              <li>
+                <strong>PHONE</strong>
+                <span>18189271592</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <footer class="contact">
           <ul>
             <li>
-              <strong>AGE</strong>
-              <span>18</span>
+              <a href="#">
+                <i class="iconfont icon-github"></i>
+              </a>
             </li>
             <li>
-              <strong>ADDRESS</strong>
-              <span>陕西.西安</span>
+              <a href="#">
+                <i class="iconfont icon-weibo"></i>
+              </a>
             </li>
             <li>
-              <strong>E-MAIL</strong>
-              <span>mayufo@aliyun.com</span>
+              <a href="#">
+                <i class="iconfont icon-zhihu"></i>
+              </a>
             </li>
-            <li>
-              <strong>PHONE</strong>
-              <span>18189271592</span>
-            </li>
+            <!--22<i class="iconfont icon-github">11</i>-->
           </ul>
+        </footer>
+      </div>
+      <!--<p>这里是我的自我简介-->
+    </main>
+    <!--背景图片的遮罩层-->
+    <div class="topBgWrap"></div>
+    <!--背景图片-->
+    <div class="topBg"></div>
+    <!--下载-->
+    <div class="downloadWrap">
+      <a class="download" download href="assets/download/resume.pdf">DOWNLOAD RESUME</a>
+      <p>悬浮在尘世中的一个小小程序员，码出每一个符号，书写一段段逻辑，只为写成更好的程序，带来更棒的产品。无论在任何公司，我都不忘初心，不违本心，不负真心！做一个有灵魂的前端工程师！</p>
+    </div>
+    <!--技能-->
+    <section id="skills" class="skill">
+      <h2>Professional Skills</h2>
+      <ul class="clearfix">
+        <li>
+          <h3>HTML 5 & CSS 3</h3>
+          <div class="row">
+            <div class="progress" data-width="90%" style="width: 90%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>Javascript</h3>
+          <div class="row">
+            <div class="progress" data-width="75%" style="width: 75%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>JQuery</h3>
+          <div class="row">
+            <div class="progress" data-width="60%" style="width: 60%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>PhotoShop</h3>
+          <div class="row">
+            <div class="progress" data-width="50%" style="width: 50%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>Vue</h3>
+          <div class="row">
+            <div class="progress" data-width="60%" style="width: 60%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>Node</h3>
+          <div class="row">
+            <div class="progress" data-width="20%" style="width: 20%"></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!--作品-->
+    <section id="portfolio" class="portfolio">
+      <h2>Portfolio</h2>
+      <nav>
+        <ul class="clearfix">
+          <li id="item1">All</li>
+          <li id="item2">UI组件</li>
+          <li id="item3">Demo</li>
+        </ul>
+        <div id="barItem" class="bar state-3">
+          <div class="barInner"></div>
+        </div>
+      </nav>
+      <div class="project">
+        <div class="projectItem big" style="top: 0; left: 0;">
+          <img src="assets/img/1.jpg" alt="">
+          <div class="projectInfo">
+            <h4>Vue demo</h4>
+            <div class="desc">desc it</div>
+          </div>
+        </div>
+        <div class="projectItem small" style="top: 0; right: 0">
+          <img src="assets/img/2.jpg" alt="">
+          <div class="projectInfo">
+            <h4>Node demo</h4>
+            <div class="desc">desc it</div>
+          </div>
+        </div>
+        <div class="projectItem small" style="bottom: 0; right: 0">
+          <img src="assets/img/3.jpg" alt="">
+          <div class="projectInfo">
+            <h4>React demo</h4>
+            <div class="desc">desc it</div>
+          </div>
         </div>
       </div>
-      <footer class="contact">
-        <ul>
-          <li>
-            <a href="#">
-              <i class="iconfont icon-github"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="iconfont icon-weibo"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="iconfont icon-zhihu"></i>
-            </a>
-          </li>
-          <!--22<i class="iconfont icon-github">11</i>-->
-        </ul>
-      </footer>
-    </div>
-    <!--<p>这里是我的自我简介-->
-  </main>
-
-  <div class="topBgWrap"></div>
-  <div class="topBg"></div>
-  <div class="downloadWrap">
-    <a class="download" download href="assets/download/resume.pdf">DOWNLOAD RESUME</a>
-    <p>悬浮在尘世中的一个小小程序员，码出每一个符号，书写一段段逻辑，只为写成更好的程序，带来更棒的产品。无论在任何公司，我都不忘初心，不违本心，不负真心！做一个有灵魂的前端工程师！</p>
+    </section>
   </div>
 
-  <section class="skill">
-    <h2>Professional Skills</h2>
-    <ul class="clearfix">
-      <li>
-        <h3>HTML 5 & CSS 3</h3>
-        <div class="row">
-          <div class="progress" data-width="90%" style="width: 90%"></div>
-        </div>
-      </li>
-      <li>
-        <h3>Javascript</h3>
-        <div class="row">
-          <div class="progress" data-width="75%" style="width: 75%"></div>
-        </div>
-      </li>
-      <li>
-        <h3>JQuery</h3>
-        <div class="row">
-          <div class="progress" data-width="60%" style="width: 60%"></div>
-        </div>
-      </li>
-      <li>
-        <h3>PhotoShop</h3>
-        <div class="row">
-          <div class="progress" data-width="50%" style="width: 50%"></div>
-        </div>
-      </li>
-      <li>
-        <h3>Vue</h3>
-        <div class="row">
-          <div class="progress" data-width="60%" style="width: 60%"></div>
-        </div>
-      </li>
-      <li>
-        <h3>Node</h3>
-        <div class="row">
-          <div class="progress" data-width="20%" style="width: 20%"></div>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <section class="portfolio">
-    <h2>Portfolio</h2>
-    <nav>
-      <ul class="clearfix">
-        <li id="item1">All</li>
-        <li id="item2">UI组件</li>
-        <li id="item3">Demo</li>
-      </ul>
-      <div id="barItem" class="bar state-3">
-        <div class="barInner"></div>
-      </div>
-    </nav>
-    <div class="project">
-      <div class="projectItem big" style="top: 0; left: 0;">
-        <img src="assets/img/1.jpg" alt="">
-        <div class="projectInfo">
-          <h4>Vue demo</h4>
-          <div class="desc">desc it</div>
-        </div>
-      </div>
-      <div class="projectItem small" style="top: 0; right: 0">
-        <img src="assets/img/2.jpg" alt="">
-        <div class="projectInfo">
-          <h4>Node demo</h4>
-          <div class="desc">desc it</div>
-        </div>
-      </div>
-      <div class="projectItem small" style="bottom: 0; right: 0">
-        <img src="assets/img/3.jpg" alt="">
-        <div class="projectInfo">
-          <h4>React demo</h4>
-          <div class="desc">desc it</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <script>
-    item1.onclick = function () {
-        barItem.className = "bar state-1"
-    }
-    item2.onclick = function () {
-        barItem.className = "bar state-2"
-    }
-    item3.onclick = function () {
-        barItem.className = "bar state-3"
-    }
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
