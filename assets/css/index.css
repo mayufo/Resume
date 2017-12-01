@@ -19,7 +19,7 @@ body {
 
 section  {
   max-width: 940px;
-  margin: 80px auto 0;
+  margin: 0 auto 80px;
 }
 
 section h2 {
@@ -44,7 +44,9 @@ section h2 {
   animation: down ease-out 0.8s;
   animation-iteration-count: 1;
   transform-origin: 50% 50%;
-  animation-fill-mode:forwards;
+  margin-bottom: 68px;
+  position: absolute;
+  top: 0;
 }
 
 .topHeaderInner {
@@ -63,7 +65,7 @@ section h2 {
 }
 
 
-@keyframes down{
+@keyframes down {
   0% {
     opacity:0;
     transform:  translate(0px,-300px) ;
@@ -74,7 +76,7 @@ section h2 {
   }
 }
 
-@keyframes up{
+@keyframes up {
   0% {
     opacity:0;
     transform:  translate(0px, 300px) ;
@@ -116,6 +118,8 @@ section h2 {
   padding: 12px 0;
   transition: all 1s;
   position: relative;
+  text-transform: uppercase;
+
 }
 
 .topHeader .nav > li > a::after {
@@ -144,6 +148,22 @@ section h2 {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
   top: 66px;
   animation: childMenu .3s;
+}
+
+.topHeaderFixed .nav > li.active > .childMenu {
+  display: block;
+  position: absolute;
+  background: white;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  top: 52px;
+  animation: childMenu .3s;
+}
+
+.topHeader .nav > li.active > .childMenu a:hover,
+.topHeaderFixed .nav > li.active > .childMenu a:hover {
+  color: #e8676b !important;
+  background: #fafafa !important;
+  cursor: pointer;
 }
 
 @keyframes childMenu {
@@ -195,7 +215,7 @@ section h2 {
 }
 
 main {
-  margin: 68px auto 0;
+  margin: 160px auto 0;
   background: #ffffff;
   width: 940px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -305,7 +325,7 @@ main .infoWrap footer li a:hover {
 .downloadWrap {
   text-align: center;
   max-width: 940px;
-  margin: 0 auto;
+  margin: 0 auto 80px;
 }
 
 .downloadWrap a {
