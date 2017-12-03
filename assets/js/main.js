@@ -2,11 +2,12 @@
 loading()
 // 导航栏
 navInit()
-// 填充导航
-// fillNav()
 // 作品点击
 portfolioInit()
-
+// 动画
+requestAnimationFrame(animate)
+// 高亮nav
+findHeightLight()
 
 window.onscroll = function (e) {
     let topHeader = document.querySelector('.topHeader')
@@ -16,7 +17,36 @@ window.onscroll = function (e) {
     } else {
         topHeader.classList.remove('topHeaderFixed')
     }
+    // 高亮nav
+    findHeightLight()
 }
+
+function findHeightLight() {
+    let model = document.querySelectorAll('[data-scroll]')
+    let minIndex = 0
+    for(let i = 0, len = model.length; i < len; i++) {
+        if(Math.abs(model[i].offsetTop - window.scrollY ) < Math.abs(model[minIndex].offsetTop - window.scrollY)) {
+            minIndex = i;
+        }
+    }
+    model[minIndex].classList.add('scroll')
+
+    let href = document.querySelectorAll(`a[href="#${model[minIndex].id}"]`)
+    for (let i = 0, item = document.querySelectorAll('.nav > li'), len = item.length; i < len; i++) {
+        item[i].classList.remove('heightLight')
+    }
+    href[0].parentNode.classList.add('heightLight')
+}
+
+/**
+ * 动画
+ * @param time
+ */
+function animate(time) {
+    requestAnimationFrame(animate)
+    TWEEN.update(time)
+}
+
 
 function loading() {
    setTimeout( function () {
@@ -28,7 +58,7 @@ function loading() {
 }
 
 function navInit () {
-    let navItem = document.querySelectorAll('.topHeader nav ul li')
+    let navItem = document.querySelectorAll('.topHeader .nav  li')
     for (let i = 0, len = navItem.length; i < len; i++) {
         navItem[i].onmouseenter = function (e) {
             e.currentTarget.classList.add('active')
@@ -36,15 +66,26 @@ function navInit () {
         navItem[i].onmouseleave = function (e) {
             e.currentTarget.classList.remove('active')
         }
-        navItem[i].childNodes[0].onclick = function (e) {
+        navItem[i].children[0].onclick = function (e) {
             e.preventDefault()
             let a = e.currentTarget
-            let element = document.querySelector(a.getAttribute('href'))
-            window.scrollTo(0, element.offsetTop - 100)
+            if (a.getAttribute('href')) {
+                let endScroll = document.querySelector(a.getAttribute('href')).offsetTop - 100 || null
+            }
+            let coords = {x: 0, y: window.scrollY}
+            let tween = new TWEEN.Tween(coords)
+                .to({x: 0, y: endScroll}, 500)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .onUpdate(function () {
+                    window.scrollTo(0, coords.y)
+                })
+                .start()
+
 
         }
     }
 }
+
 
 function portfolioInit () {
     let portfolioArray = document.querySelectorAll('.portfolio  li')
