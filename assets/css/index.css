@@ -93,6 +93,7 @@ section h2 {
 
 .topHeader h1 span {
   color: #9a9da2;
+  padding-left: 5px;
 }
 
 .topHeader h1 span:first-child {
@@ -400,7 +401,6 @@ main .infoWrap footer li a:hover {
   background: #e86767;
   height: 4px;
   border-radius: 2px;
-  box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
   animation: progress 2s forwards;
   animation-timing-function: linear;
 }

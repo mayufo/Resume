@@ -69,9 +69,7 @@ function navInit () {
         navItem[i].children[0].onclick = function (e) {
             e.preventDefault()
             let a = e.currentTarget
-            if (a.getAttribute('href')) {
-                let endScroll = document.querySelector(a.getAttribute('href')).offsetTop - 100 || null
-            }
+            let endScroll = document.querySelector(a.getAttribute('href')).offsetTop - 100 || null
             let coords = {x: 0, y: window.scrollY}
             let tween = new TWEEN.Tween(coords)
                 .to({x: 0, y: endScroll}, 500)
