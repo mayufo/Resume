@@ -54,7 +54,7 @@ function loading() {
        loading.style.display = 'none'
        let main = document.querySelector('.main')
        main.style.display = 'block'
-   }, 2000)
+   }, 0)
 }
 
 function navInit () {
@@ -96,5 +96,22 @@ function portfolioInit () {
     }
     portfolioArray[2].onclick = function () {
         barItem.className = "bar state-3"
+    }
+}
+
+var uniqueInOrder = function (iterable) {
+    //your code here - remember iterable can be a string or an array
+    if (!iterable) {
+        return []
+    } else {
+        var arr = iterable.split('')
+        var arrNew = [arr[0]]
+        for (let i = 1, j = 0, len = arr.length; i < len; i++) {
+            if (arr[i] !== arrNew[j]) {
+                arrNew.push(arr[i])
+                j++
+            }
+        }
+        return arrNew
     }
 }
