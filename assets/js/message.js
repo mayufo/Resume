@@ -4,34 +4,50 @@
 
 !function () {
     // var view = document.querySelector('#
-    var view = document.querySelector('#message')
-    var controller = {
-        view: null,
-        init: function(view) {
-            this.view = view
-            console.log(this)
-            this.messageForm = view.querySelector('form')
-            this.messageList = view.querySelector('ul')
-            this.view = view
-            this.initAV()
-            this.loadMessages()
-            this.bindEvents()
+    let view = document.querySelector('#message')
+    let model = {
+        // 获取
+        fetch: function () {
+            let query = new AV.Query('Message')
+            return query.find()
         },
-        initAV: () => {
+        // 保存
+        save: function (name, message) {
+            const Message = AV.Object.extend('Message')
+            const messageObject = new Message()
+            return messageObject.save({
+                name,
+                message
+            })
+        },
+        init: function() {
             // 初始化
             const appId = 'UzIwpzSMQd8e18dbqAV9iAj9-gzGzoHsz'
             const appKey = 'hwvTdsbnq4CUpodXAy1Lpmlo'
             AV.init({ appId, appKey })
         },
-        loadMessages: () => {
+    }
+    let controller = {
+        view: null,
+        model: null,
+        init: function(view, model) {
+            this.view = view
+            this.model = model
+            this.model.init()
+            this.messageForm = view.querySelector('form')
+            this.messageList = view.querySelector('ul')
+            this.view = view
+            this.loadMessages()
+            this.bindEvents()
+        },
+
+        loadMessages: function() {
             // 获取
-            var query = new AV.Query('Message');
-            query.find().then((message) => {
+            this.model.fetch().then((message) => {
                 let array = message.map((item) => item.attributes)
                 array.forEach(item => {
                     let li = document.createElement('li')
                     let h3 = document.createElement('h3')
-                    console.log(item.name)
                     h3.innerText = `${item.name}:`
                     let p = document.createElement('p')
                     p.innerText = `${item.message}`
@@ -52,7 +68,7 @@
                 this.save()
             })
         },
-        save: () => {
+        save: function () {
             let name = this.messageForm.querySelector('input[name=name]').value
             let message = this.messageForm.querySelector('input[name=content]').value
             if (!name) {
@@ -60,12 +76,8 @@
             } else if (!message) {
                 alert('请输入留言内容')
             } else if (name && message) {
-                const Message = AV.Object.extend('Message');
-                const messageObject = new Message();
-                messageObject.save({
-                    name,
-                    message
-                }).then((res) => {
+
+                this.model.save(name, message).then((res) => {
                     res = res.attributes
                     alert('发送成功')
                     this.messageForm.querySelector('input[name=name]').value = ''
@@ -82,10 +94,7 @@
             }
         }
     }
-    controller.init(view)
-
-
-
+    controller.init(view, model)
 }.call()
 
 
