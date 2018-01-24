@@ -3,7 +3,6 @@
  */
 
 !function () {
-    // var view = document.querySelector('#
     let view = document.querySelector('#message')
     let model = {
         // 获取
@@ -20,12 +19,12 @@
                 message
             })
         },
+        // 初始化
         init: function() {
-            // 初始化
             const appId = 'UzIwpzSMQd8e18dbqAV9iAj9-gzGzoHsz'
             const appKey = 'hwvTdsbnq4CUpodXAy1Lpmlo'
             AV.init({ appId, appKey })
-        },
+        }
     }
     let controller = {
         view: null,
@@ -74,7 +73,7 @@
                     alert('发送成功')
                     this.messageForm.querySelector('input[name=name]').value = ''
                     this.messageForm.querySelector('input[name=content]').value = ''
-                   this.addElement(res)
+                    this.addElement(res)
                 })
             }
         },
