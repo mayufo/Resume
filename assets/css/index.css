@@ -412,7 +412,6 @@ main .infoWrap footer li a:hover {
 
 .portfolio {
   text-align: center;
-  height: 100vh;
 }
 
 .portfolio nav {
@@ -513,10 +512,6 @@ main .infoWrap footer li a:hover {
   margin-bottom: 10px;
 }
 
-.message {
-  margin-top: 200px;
-}
-
 .message li {
   background: white;
   padding: 15px;
@@ -527,35 +522,35 @@ main .infoWrap footer li a:hover {
 .message li h3 {
   margin-bottom: 15px;
 }
-#messageForm label {
+.message form label {
   position: relative;
 }
 
-#messageForm label input {
+.message form label input {
   outline: none;
   width: 42%;
   padding: 15px;
 }
 
-#messageForm label i {
+.message form label i {
   position: absolute;
   right: 15px;
   top: 2px;
   color: #d9d9d9;
 }
 
-#messageForm label input::-webkit-input-placeholder {
+.message form label input::-webkit-input-placeholder {
   font-size: 12px;
   color: #d9d9d9;
 }
 
 
 
-#messageForm .icon-message {
+#message .icon-message {
   font-size: 18px;
 }
 
-#messageForm .send {
+#message .send {
   float: right;
   padding: 16px;
   border: none;

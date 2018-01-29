@@ -70,39 +70,26 @@
             })
         },
     })
-    var controller = {
+    let controller = {
         view: null,
-        init: function(view) {
+        model: null,
+        init: function(view, model) {
             this.view = view
-            console.log(this)
+            this.model = model
+            this.model.init()
             this.messageForm = view.querySelector('form')
             this.messageList = view.querySelector('ul')
             this.view = view
-            this.initAV()
             this.loadMessages()
             this.bindEvents()
         },
-        initAV: () => {
-            // 初始化
-            const appId = 'UzIwpzSMQd8e18dbqAV9iAj9-gzGzoHsz'
-            const appKey = 'hwvTdsbnq4CUpodXAy1Lpmlo'
-            AV.init({ appId, appKey })
-        },
-        loadMessages: () => {
+
+        loadMessages: function() {
             // 获取
-            var query = new AV.Query('Message');
-            query.find().then((message) => {
+            this.model.fetch().then((message) => {
                 let array = message.map((item) => item.attributes)
                 array.forEach(item => {
-                    let li = document.createElement('li')
-                    let h3 = document.createElement('h3')
-                    console.log(item.name)
-                    h3.innerText = `${item.name}:`
-                    let p = document.createElement('p')
-                    p.innerText = `${item.message}`
-                    li.appendChild(h3)
-                    li.appendChild(p)
-                    this.messageList.appendChild(li)
+                    this.addElement(item)
                 })
             }, (error) => {
                 // 异常处理
@@ -116,7 +103,7 @@
                 this.save()
             })
         },
-        save: () => {
+        save: function () {
             let name = this.messageForm.querySelector('input[name=name]').value
             let message = this.messageForm.querySelector('input[name=content]').value
             if (!name) {
@@ -124,32 +111,27 @@
             } else if (!message) {
                 alert('请输入留言内容')
             } else if (name && message) {
-                const Message = AV.Object.extend('Message');
-                const messageObject = new Message();
-                messageObject.save({
-                    name,
-                    message
-                }).then((res) => {
+                this.model.save(name, message).then((res) => {
                     res = res.attributes
                     alert('发送成功')
                     this.messageForm.querySelector('input[name=name]').value = ''
                     this.messageForm.querySelector('input[name=content]').value = ''
-                    let li = document.createElement('li')
-                    let h3 = document.createElement('h3')
-                    h3.innerText = `${res.name}:`
-                    let p = document.createElement('p')
-                    p.innerText = `${res.message}`
-                    li.appendChild(h3)
-                    li.appendChild(p)
-                    this.messageList.appendChild(li)
+                    this.addElement(res)
                 })
             }
+        },
+        addElement: function (res) { 
+            let li = document.createElement('li')
+            let h3 = document.createElement('h3')
+            h3.innerText = `${res.name}:`
+            let p = document.createElement('p')
+            p.innerText = `${res.message}`
+            li.appendChild(h3)
+            li.appendChild(p)
+            this.messageList.appendChild(li)
         }
     }
-    controller.init(view)
-
-
-
+    controller.init(view, model)
 }.call()
 
 
