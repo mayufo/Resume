@@ -1,6 +1,9 @@
 /**
  * Created by liuhuimin on 2018/1/21.
  */
+!function(){
+    console.log(333)
+}.call()
 
 // 初始化
 const appId = 'UzIwpzSMQd8e18dbqAV9iAj9-gzGzoHsz';

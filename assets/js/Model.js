@@ -1,3 +1,8 @@
+/*
+ var model = Model({
+ resourceName: '表名'
+ })
+ */
 window.Model = function (options) {
   let resourceName = options.resourceName
   return {
@@ -7,13 +12,13 @@ window.Model = function (options) {
       AV.init({ appId, appKey })
     },
     fetch: function () {
-      let query = new AV.Query(resourceName)
+      var query = new AV.Query(resourceName)
       return query.find()
     },
     save: function (object) {
       const Message = AV.Object.extend(resourceName)
       const messageObject = new Message()
-      return messageObject.save({object})
+      return messageObject.save(object)
     }
   }
 }
